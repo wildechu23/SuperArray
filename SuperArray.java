@@ -2,9 +2,11 @@ public class SuperArray {
   private String[] data;
   private int size;
 
+  private int arraySize = 10;
+
   public SuperArray() {
     size = 0;
-    data = new String[2];
+    data = new String[arraySize];
   }
 
   public int size() {
@@ -39,5 +41,36 @@ public class SuperArray {
     }
     System.out.println(newArray);
     data = newArray;
+  }
+
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
+  public void clear() {
+    data = new String[arraySize]
+    size = 0;
+  }
+
+  public String toString() {
+    String hold;
+    hold += "["
+    for(int i = 0; i < size; i++) {
+      hold += data[i];
+      if(i != size - 1) {
+        hold += ", ";
+      }
+    }
+    hold += "]";
+    return hold;
+  }
+
+  public boolean contains(String s) {
+    for(int i = 0; i < size; i++) {
+      if(data[i] == s) {
+        return true;
+      }
+    }
+    return false;
   }
 }
