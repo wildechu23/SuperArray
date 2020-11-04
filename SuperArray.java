@@ -2,7 +2,7 @@ public class SuperArray {
   private String[] data;
   private int size;
 
-  private int arraySize = 10;
+  private int arraySize = 2;
 
   public SuperArray() {
     size = 0;
@@ -39,7 +39,6 @@ public class SuperArray {
     for(int i = 0; i < data.length; i++) {
       newArray[i] = data[i];
     }
-    System.out.println(newArray);
     data = newArray;
   }
 
@@ -48,13 +47,13 @@ public class SuperArray {
   }
 
   public void clear() {
-    data = new String[arraySize]
+    data = new String[arraySize];
     size = 0;
   }
 
   public String toString() {
-    String hold;
-    hold += "["
+    String hold = "";
+    hold += "[";
     for(int i = 0; i < size; i++) {
       hold += data[i];
       if(i != size - 1) {
