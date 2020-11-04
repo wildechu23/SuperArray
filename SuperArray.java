@@ -2,11 +2,11 @@ public class SuperArray {
   private String[] data;
   private int size;
 
-  private int arraySize = 2;
+  private int initialCapacity = 2;
 
   public SuperArray() {
     size = 0;
-    data = new String[arraySize];
+    data = new String[initialCapacity];
   }
 
   public int size() {
@@ -47,7 +47,7 @@ public class SuperArray {
   }
 
   public void clear() {
-    data = new String[arraySize];
+    data = new String[initialCapacity];
     size = 0;
   }
 
