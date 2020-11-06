@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class SuperArray {
   private String[] data;
   private int size;
@@ -99,7 +97,7 @@ public class SuperArray {
   public String remove(int index) {
     size--;
     String hold = data[index];
-    for (int i = index; i < size; i--) {
+    for (int i = index; i < size; i++) {
       data[i] = data[i+1];
     }
     return hold;
@@ -115,7 +113,7 @@ public class SuperArray {
   }
 
   public String[] toArray() {
-    String[] hold = {};
+    String[] hold = new String[size];
     for(int i = 0; i < size; i++) {
       hold[i] = data[i];
     }

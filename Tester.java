@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Tester {
   public static void main(String[] args) {
     SuperArray a = new SuperArray();
@@ -15,7 +17,9 @@ public class Tester {
     System.out.println(a.indexOf("no")); // 1
     a.add(1, "ok");
     System.out.println(a); // ["yes", "ok", "no", "maybe"]
-
+    a.remove(2);
+    System.out.println(a); // ["yes", "ok", "maybe"]
+    Arrays.toString(a.toArray());
 
 
     a.clear();
