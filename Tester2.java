@@ -12,6 +12,7 @@ public class Tester2 {
     System.out.println(a);
     System.out.println(a.contains("hi")); //false
     System.out.println(a.contains("no")); // true
+    System.out.println(a.indexOf("no"));
     a.clear();
     System.out.println(a.isEmpty()); // true
     System.out.println(a);

@@ -1,8 +1,10 @@
+import java.util.Arrays;
+
 public class SuperArray {
   private String[] data;
   private int size;
 
-  private int initialCapacity = 2;
+  private int initialCapacity = 10;
 
   public SuperArray() {
     size = 0;
@@ -44,7 +46,7 @@ public class SuperArray {
     if(data.length == 0) {
       newArray = new String[1];
     } else {
-      newArray = new String[size * 2];
+      newArray = new String[data.length * 2];
     }
     for(int i = 0; i < data.length; i++) {
       newArray[i] = data[i];
@@ -76,7 +78,7 @@ public class SuperArray {
 
   public boolean contains(String s) {
     for(int i = 0; i < size; i++) {
-      if(data[i] == s) {
+      if(data[i] != null && data[i].equals(s)){
         return true;
       }
     }
@@ -84,16 +86,18 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
-    if(data.length == size) {
+    size++;
+    if(data.length >= size) {
       resize();
     }
     for(int i = size; i > index; i--) {
-      data[i + 1] = data[i];
+      data[i] = data[i - 1];
     }
     data[index] = element;
   }
 
   public String remove(int index) {
+    size--;
     String hold = data[index];
     for (int i = index; i < size; i--) {
       data[i] = data[i+1];
@@ -103,7 +107,7 @@ public class SuperArray {
 
   public int indexOf(String s) {
     for (int i = 0; i < size; i++) {
-      if (data[i] == s) {
+      if (data[i] != null && data[i].equals(s)) {
         return i;
       }
     }
