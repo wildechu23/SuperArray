@@ -19,7 +19,7 @@ public class Tester {
     System.out.println(a); // ["yes", "ok", "no", "maybe"]
     a.remove(2);
     System.out.println(a); // ["yes", "ok", "maybe"]
-    Arrays.toString(a.toArray());
+    System.out.println(Arrays.toString(a.toArray()));
 
 
     a.clear();
