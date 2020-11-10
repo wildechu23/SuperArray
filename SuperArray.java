@@ -5,13 +5,16 @@ public class SuperArray {
   private int initialCapacity = 10;
 
   public SuperArray() {
-    size = 0;
     data = new String[initialCapacity];
+    size = 0;
   }
 
   public SuperArray(int initialCapacity) {
-    size = 0;
+    if(initialCapacity < 0) {
+      throw new IllegalArgumentException("Initial Capacity " + initialCapacity + " can't be negative");
+    }
     data = new String[initialCapacity];
+    size = 0;
   }
 
   public int size() {
@@ -30,10 +33,16 @@ public class SuperArray {
   }
 
   public String get(int index) {
+    if(index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("Can't get index " + index + " outside of range 0 to " + (size - 1));
+    }
     return data[index];
   }
 
   public String set(int index, String element) {
+    if(index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("Can't set index " + index + " outside of range 0 to " + (size - 1));
+    }
     String old = data[index];
     data[index] = element;
     return old;
@@ -84,6 +93,9 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
+    if(index < 0 || index > size()) {
+      throw new IndexOutOfBoundsException("Cannot add at index " + index + " outside of range 0 to " + size);
+    }
     size++;
     if(data.length >= size) {
       resize();
@@ -95,6 +107,9 @@ public class SuperArray {
   }
 
   public String remove(int index) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("Can't remove at index " + index + " outside of range 0 to " + (size - 1));
+    }
     size--;
     String hold = data[index];
     data[index] = null;
