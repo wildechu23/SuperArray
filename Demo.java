@@ -11,6 +11,8 @@ public class Demo {
     SuperArray overlap = new SuperArray();
     for (int i = 0; i < b.size(); i++) {
       overlap.add(a.get(i));
+    }
+    for (int i = 0; i < b.size(); i++) {
       overlap.add(b.get(i));
     }
     for (int i = overlap.size() - 1; i >= 0; i--) {
