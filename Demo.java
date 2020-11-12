@@ -64,6 +64,36 @@ public class Demo {
 
     removeDuplicates(words);
     System.out.println(words);
-    // kani uni ebi una toro
+    // words = [kani uni ebi una toro]
+
+    try {
+      SuperArray test = new SuperArray(-1);
+    } catch(IllegalArgumentException e) {
+      e.printStackTrace();
+    }
+
+    try {
+      words.get(-1);
+    } catch(IndexOutOfBoundsException e) {
+      e.printStackTrace();
+    }
+
+    try {
+      words.set(20, "ew");
+    } catch(IndexOutOfBoundsException e) {
+      e.printStackTrace();
+    }
+
+    try {
+      words.add(20, "ew");
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+    }
+
+    try {
+      words.remove(10);
+    } catch (IndexOutOfBoundsException e) {
+      e.printStackTrace();
+    }
   }
 }
