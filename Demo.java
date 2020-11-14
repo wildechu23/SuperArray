@@ -9,7 +9,7 @@ public class Demo {
 
   public static SuperArray findOverlap(SuperArray a, SuperArray b) {
     SuperArray overlap = new SuperArray();
-    for (int i = 0; i < b.size(); i++) {
+    for (int i = 0; i < a.size(); i++) {
       overlap.add(a.get(i));
     }
     for (int i = 0; i < b.size(); i++) {
